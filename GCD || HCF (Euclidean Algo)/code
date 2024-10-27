@@ -1,0 +1,42 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    // Write GCD || HCF
+    
+    int n1 = 9, n2 = 12;
+    // int gcd = 1;
+    // // for(int i=2;i<= min(n1,n2);i++){
+    // //     if(n1 % i == 0 && n2 % i == 0){
+    // //         gcd = i;
+    // //         cout << gcd << " ";
+    // //     }
+    // // }
+    
+    // for(int i=min(n1,n2);i>0;i--){
+    //     if(n1 % i == 0 && n2 % i == 0){
+    //         gcd = i;
+    //         cout << gcd << " ";
+    //     }
+    // }
+    
+    // Using Euclid's algorithm, is an efficient method for computing the greatest common divisor (GCD) of two integers (numbers)
+    
+    while ( n1 > 0 && n2 > 0){
+        if(n1 >= n2){
+            n1 = n1-n2;
+        }else{
+            n2 = n2-n1;
+        }
+    }
+    
+    if(n1 == 0){
+        cout << n2 << endl;
+    }else{
+        cout << n1 << endl;;
+    }
+    
+    
+    
+    return 0;
+}
