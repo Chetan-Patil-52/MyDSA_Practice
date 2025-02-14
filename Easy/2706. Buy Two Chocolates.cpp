@@ -26,3 +26,15 @@ public:
         // return orig_money;
     }
 };
+
+class Solution {
+public:
+    int buyChoco(vector<int>& prices, int money) {
+        sort(prices.begin(),prices.end());
+        int price = prices[0]+prices[1];
+        int leftover = 0;
+        if(price <= money){
+            leftover = abs(price - money);
+        }else{
+            return money;
+        }
