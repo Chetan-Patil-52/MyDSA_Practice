@@ -83,3 +83,32 @@ public:
         return minHrs;
     }
 };
+
+
+
+
+class Solution {
+public:
+    int bestClosingTime(string customers) {
+        int n = customers.size();
+        int penalty = count(begin(customers),end(customers),'Y');
+        int minHrs = 0;
+
+        int minPenalty = penalty;
+
+        for(int i=0;i<n;i++){
+
+            if(customers[i]=='Y'){
+                penalty--;
+            }else{
+                penalty++;
+            }
+
+            if(penalty < minPenalty){
+                minPenalty = penalty;
+                minHrs = i+1;
+            }
+        }
+        return minHrs;
+    }
+};
